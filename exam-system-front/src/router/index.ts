@@ -1,11 +1,11 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import Login from '../views/Login.vue'
 import ModuleSelect from '../views/ModuleSelect.vue'
 import ExamList from '../views/ExamList.vue'
 import ExamEdit from '../views/ExamEdit.vue'
 
 // 路由规则
-const routes: Array<RouteRecordRaw> = [
+const routes = [
   {
     path: '/',
     redirect: '/login'

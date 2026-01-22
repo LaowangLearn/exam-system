@@ -1,5 +1,8 @@
 <template>
-  <router-view />
+  <div>
+    <h1>App 组件已加载</h1>
+    <router-view />
+  </div>
 </template>
 
 <script setup lang="ts">
