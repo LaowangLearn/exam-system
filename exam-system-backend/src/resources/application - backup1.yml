@@ -1,0 +1,31 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  datasource:
+    # MySQL 8.0 连接地址，注意时区和编码
+    url: jdbc:mysql://localhost:3306/examdb?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8mb4
+    # MySQL 8.0 的驱动类（必须用 cj 包下的）
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 刚才创建的用户名和密码
+    username: examuser
+    password: MySQL!@34
+    schema: classpath:schema.sql
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  mybatis-plus:
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.example.examsystembackend.entity
+    configuration:
+      map-underscore-to-camel-case: true
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+      default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+
+logging:
+  level:
+    root: info
+    com.example.examsystembackend: debug
